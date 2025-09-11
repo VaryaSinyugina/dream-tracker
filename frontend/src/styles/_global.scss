@@ -1,0 +1,49 @@
+:root {
+  --color-blue-dark: #1b262c;
+  --color-blue: #0f4c75;
+  --color-blue-light: #3282b8;
+  --color-blue-lightest: #bbe1fa;
+  --color-dark: #1a1a1a;
+  --color-light: #fff;
+
+  --font-family-main: "Mulish", sans-serif;
+}
+
+html {
+  scrollbar-width: thin;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-main);
+  color: var(--color-dark);
+  overscroll-behavior: none;
+  background-color: var(--color-blue-dark);
+}
+
+main {
+  flex-grow: 1;
+  margin-top: var(--header-height);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
