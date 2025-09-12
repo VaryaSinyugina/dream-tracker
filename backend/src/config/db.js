@@ -9,8 +9,19 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: "postgres",
     port: process.env.DB_PORT,
-    logging: false, // отключаем лишние логи SQL
+    logging: false, 
   }
 );
 
-module.exports = sequelize;
+// Функция для подключения и синхронизации
+async function initDB() {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync({ alter: true }); 
+  } catch (err) {
+    console.error("Ошибка подключения к БД:", err);
+    process.exit(1); 
+  }
+}
+
+module.exports = { sequelize, initDB };
