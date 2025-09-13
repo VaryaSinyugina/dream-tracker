@@ -1,0 +1,22 @@
+.menu-button {
+  padding: 12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--color-light);
+  border-bottom-right-radius: 10px;
+  display: none;
+
+  span {
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-dark);
+  }
+}
+
+@media (max-width: 991px) {
+    .menu-button {
+        display: flex;
+    }
+}
